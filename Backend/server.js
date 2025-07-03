@@ -16,10 +16,8 @@ app.use(express.json());
 
 // ================= MongoDB Connection =================
 mongoose
-  .connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/portfolio', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/portfolio')
+
   .then(() => console.log('✅ MongoDB connected'))
   .catch((err) => console.error('❌ MongoDB error:', err));
 
