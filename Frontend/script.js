@@ -67,7 +67,7 @@ document.querySelectorAll(".skills-heading, .skill").forEach((el) => {
 
 // ========== DOMContentLoaded ==========
 document.addEventListener("DOMContentLoaded", () => {
-  const API_URL = "http://localhost:5050";
+  const API_URL = "https://harsh-ohm.onrender.com"; // ✅ Live backend URL
 
   // ========= Comment Form ==========
   const commentForm = document.getElementById("commentForm");
