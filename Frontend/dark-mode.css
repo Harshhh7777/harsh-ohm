@@ -1,0 +1,78 @@
+/* --------- Dark/light mode -------- */
+
+.theme-toggle-glass {
+  position: fixed;
+  top: 17%;
+  right: 10px;
+  width: 60px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 4px 15px rgba(255, 255, 255, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+.theme-toggle-glass i {
+  font-size: 12px;
+  color: var(--text-color);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.toggle-thumb-glass {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+/* Dark Mode Active */
+
+/* DARK MODE ONLY */
+body.dark-mode {
+  --bg-color: #0a0f1a;
+  --text-color: #f9f9f9;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .header {
+  background-color: rgba(240, 240, 240, 0.08); /* soft translucent light-gray */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .footer,
+body.dark-mode .content,
+body.dark-mode .contact-info,
+body.dark-mode .contact-form,
+body.dark-mode .comment-section,
+body.dark-mode .portfolio-card,
+body.dark-mode .skill {
+  background-color: #2c2f3a; /* Gentle charcoal tone */
+  color: #f1f1f1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* -- Dark/light button on and off ---*/
+
+body.dark-mode .toggle-thumb-glass {
+  transform: translateX(30px);
+  background: linear-gradient(145deg, #333, #222);
+}

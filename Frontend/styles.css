@@ -1,0 +1,1074 @@
+/* ===== Header ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.header.scrolled {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+  transition: background 0.3s ease;
+}
+
+.ohm-logo {
+  height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.navbar a {
+  font-size: 25px;
+  color: #00bfff; /* Deep Sky Blue (professional and vibrant) */
+  text-decoration: none;
+  font-weight: 700; /* ✅ Make it bold */
+  margin-left: 35px;
+  transition: 0.3s;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  color: #0ef;
+  border-bottom: 2px solid #0ef;
+  padding-bottom: 2px;
+}
+
+/* Mobile nav hidden initially */
+.navbar {
+  transition: all 0.3s ease;
+  display: flex; /* ✅ Always visible on desktop */
+  gap: 25px;
+}
+
+/* Hamburger for small screen */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: black;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.menu-toggle .close-icon {
+  display: none;
+}
+
+.menu-toggle.active .open-icon {
+  display: none;
+}
+
+.menu-toggle.active .close-icon {
+  display: inline-block;
+}
+
+/* ===== Home Section ===== */
+
+/* ===== Glowing Circle Image ===== */
+.circle-container {
+  max-width: 100%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  padding: 0px;
+  /* background: linear-gradient(10deg, #00f, #0ff, #0f0, #ff0, #f00, #f0f); */
+  background-size: 300%;
+  animation: rotateGlow 6s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(135, 206, 250, 0.7),
+    0 0 40px rgba(135, 206, 250, 0.7), 0 0 60px rgba(135, 206, 250, 0.7);
+  z-index: 1;
+}
+
+/* Outer ring with soft sky blue shadow */
+.logo-ring {
+  padding: 10px;
+  border-radius: 50%;
+  background: white; /* optional inner background */
+  box-shadow: 0 0 20px rgba(135, 206, 250, 0.5); /* skyblue glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On hover, pop forward + colored shadow */
+.logo-ring.simple-hover:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(135, 206, 250, 0.7), 0 0 35px rgba(0, 191, 255, 0.4);
+}
+
+/* Logo image styling */
+.stylish-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.stylish-logo:hover {
+  transform: scale(1.05);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0px solid #fff;
+  z-index: 2;
+  position: relative;
+}
+
+.home {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 5% 30px;
+  min-height: 100vh;
+  width: 100%;
+  gap: 60px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Background container */
+.home-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Background image styling */
+.home-bg .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%); /* Dark overlay effect */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Ensure content stays above background */
+.home > *:not(.home-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  flex: 1;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  max-width: 600px;
+  /* padding-left: 10%; */
+}
+
+.home-content h3:first-of-type,
+.home-content h1 {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.home-content p {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+/* running letter web developer & designer */
+
+.role {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+
+  background: linear-gradient(90deg, #00f, #0ff, #0f0, #ff0, #f00, #f0f);
+  background-size: 300%;
+  background-position: 0%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: glowMove 4s ease-in-out infinite;
+
+  white-space: normal; /* ✅ Allow wrapping */
+  word-break: break-word; /* ✅ Let long words break */
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(18px, 2.5vw, 32px);
+}
+
+@keyframes glowMove {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+/* ===== Social Icons ===== */
+.social-icons {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.icon {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-decoration: none;
+}
+
+.icon i {
+  font-size: 36px;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Brand colors for the icons (applied at all times) */
+.icon i.fa-facebook {
+  color: #1877f2; /* Facebook blue */
+}
+
+.icon i.fa-instagram {
+  color: #e1306c; /* Instagram pink/red */
+}
+
+.icon i.fa-linkedin-in {
+  /* Note: Use fa-linkedin-in for the brand icon */
+  color: #0a66c2; /* LinkedIn blue */
+}
+
+.icon i.fa-github {
+  color: #333; /* GitHub dark grey/black */
+}
+
+/* ===== About Section ===== */
+.about {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  padding: 150px 10%;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.about-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.about-bg .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.about > *:not(.about-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  color: #0ef;
+  margin-bottom: 50px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.about-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image section */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 330px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomInFade 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Text section */
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* text-align: center; */
+}
+
+.about-text p {
+  font-family: "Inter", "Poppins", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: skyblue;
+  font-weight: 600; /* 1000 was too bold, 600 looks cleaner */
+  letter-spacing: 0.3px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+
+  text-align: center;
+  text-wrap: balance; /* modern browser support */
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomInFade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Portfolio Section ===== */
+
+.portfolio {
+  background: #f9f9f9;
+  color: #111;
+  padding: 80px 10%;
+  text-align: center;
+  position: relative;
+  padding: 100px 20px;
+  z-index: 1;
+  overflow: hidden; /* optional: helps clip background if needed */
+}
+
+/* Background wrapper */
+.portfolio-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Background image styling */
+.portfolio-bg .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Foreground content should appear above the background */
+.portfolio-heading,
+.portfolio-container {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-heading {
+  margin-top: 5%;
+  font-size: 2.5rem;
+  color: #0ef;
+  margin-bottom: 50px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.portfolio-card {
+  background: white(93.486% -0.00297 -0.00522);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.portfolio-card h3 {
+  font-size: 1.5rem;
+  color: #0ef;
+  margin: 15px 0 5px;
+}
+
+.portfolio-card p {
+  padding: 0 15px 20px;
+  font-size: 1rem;
+  color: white;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 255, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Skill Section ===== */
+
+.skills {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+
+  background: #000;
+  color: #fff;
+  padding: 100px 10%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.skills-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.skills-bg .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Make heading and skill items appear above the background */
+.skills-heading,
+.skills-container {
+  position: relative;
+  z-index: 1;
+}
+
+.skills-heading {
+  margin-top: 10%;
+  font-size: 2.5rem;
+  color: #0ef;
+  margin-bottom: 50px;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.skill {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #0ef, 0 0 40px #0ef;
+}
+
+.skill i {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #0ef;
+}
+
+.skill h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+/* Keyframes */
+@keyframes zoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.skills .skill {
+  animation: zoomFade 1s ease forwards;
+  opacity: 0;
+}
+
+/* Staggered animation */
+.skills .skill:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.skills .skill:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.skills .skill:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.skills .skill:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.skills .skill:nth-child(5) {
+  animation-delay: 1s;
+}
+.skills .skill:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+/* ================= Contact Section ================= */
+.contact {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 100vh;
+  background: #000; /* fallback if image fails */
+
+  padding: 80px 5%; /* Adjust padding as needed */
+  background: #000; /* Dark background to match other sections */
+  font-family: "Poppins", sans-serif; /* Use your preferred font */
+  color: #ededed; /* Light text color for dark background */
+}
+
+.contact-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.contact-bg .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Ensure foreground elements appear above background */
+.contact-header,
+.contact-container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-header {
+  text-align: left;
+  margin-bottom: 40px;
+  max-width: 1200px; /* Align with the container's max-width */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 10% 0; /* Add padding-top here. The 0 is for padding-bottom */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.contact-header .get-in-touch {
+  font-size: 0.9rem;
+  color: #00bfff; /* Deep Sky Blue for accent text */
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  color: #0ef; /* Cyan for headings */
+  margin-top: 0;
+  margin-bottom: 20px; /* Added some margin for consistency */
+  animation: fadeInUp 1.5s ease-out forwards; /* Apply existing animation */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(40px); /* Start low for animation */
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 40px; /* Space between form and info box */
+  justify-content: center; /* Center content horizontally */
+  max-width: 1200px; /* Max width for the whole section content */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Contact Form Styling */
+.contact-form {
+  flex: 1; /* Allows form to grow and shrink */
+  min-width: 350px; /* Minimum width before wrapping */
+  background-color: #1a1a1a; /* Dark background similar to skill cards */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1); /* Cyan shadow */
+  border: 1px solid rgba(0, 255, 255, 0.1); /* Subtle border */
+  transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+.contact-form:hover {
+  box-shadow: 0 0 20px #0ef, 0 0 40px #0ef; /* Stronger glow on hover */
+  transform: translateY(-5px); /* Slight lift */
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.95rem;
+  color: #ededed; /* Light label color */
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #444; /* Darker border */
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #ededed; /* Light text in input */
+  background-color: #222; /* Dark input background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #0ef; /* Cyan focus border */
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.3); /* Subtle glow on focus */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 100px;
+}
+
+.contact-form .required-star {
+  color: #ff6347; /* Tomato red for required star */
+  margin-left: 2px;
+}
+
+.contact-form .checkbox-group {
+  display: flex;
+  align-items: flex-start; /* Align checkbox and text at the top */
+  margin-bottom: 25px;
+}
+
+.contact-form .checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 4px; /* Adjust vertical alignment */
+  transform: scale(1.2); /* Make checkbox slightly larger */
+  accent-color: #0ef; /* Styles the checkbox itself (modern browsers) */
+}
+
+.contact-form .checkbox-group label {
+  font-size: 0.85rem;
+  color: #ccc; /* Lighter text for checkbox label */
+  font-weight: 400; /* Reset font-weight */
+  margin-bottom: 0; /* Remove default margin */
+}
+
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #00bfff; /* Deep Sky Blue button color from your navbar */
+  color: #000; /* Black text for contrast */
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  width: auto; /* Allow button to size based on content */
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.4); /* Glow for button */
+}
+
+.contact-form .submit-btn:hover {
+  background-color: #0ef; /* Cyan on hover for consistency */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 0 15px #0ef, 0 0 25px #0ef; /* Stronger glow on hover */
+}
+
+/* Contact Info Styling */
+.contact-info {
+  flex: 1; /* Allows info box to grow and shrink */
+  min-width: 300px; /* Minimum width before wrapping */
+  background-color: #1a1a1a; /* Dark background similar to skill cards */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1); /* Subtle cyan shadow */
+  border: 1px solid rgba(0, 255, 255, 0.1); /* Subtle border */
+  color: #ededed; /* Light text color */
+  transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+.contact-info:hover {
+  box-shadow: 0 0 20px #0ef, 0 0 40px #0ef; /* Stronger glow on hover */
+  transform: translateY(-5px); /* Slight lift */
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  color: #00bfff; /* Deep Sky Blue for info box sub-heading */
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.contact-info .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #ccc; /* Lighter text for info items */
+}
+
+.contact-info .info-item i {
+  color: #0ef; /* Cyan icon color */
+  margin-right: 15px;
+  font-size: 1.2rem;
+  width: 25px; /* Fixed width for icons for alignment */
+  text-align: center;
+}
+
+.contact-info h4 {
+  font-size: 1.2rem;
+  color: #00bfff; /* Deep Sky Blue for hours heading */
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.contact-info .hours-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info .hours-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #ccc; /* Lighter text for hours */
+}
+
+.contact-info .hours-list li span {
+  font-weight: 500;
+  color: #ededed; /* Slightly brighter for times */
+}
+
+.contact-info iframe {
+  max-width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px cyan;
+}
+
+.contact-info .info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.contact-info h3,
+.contact-info h4 {
+  color: #00eaff;
+}
+
+.contact-info .hours-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+/* ====== Comments Section ====== */
+
+#comments {
+  background: #f8f9fa;
+  padding: 40px 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#comments h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+#commentForm input,
+#commentForm textarea {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+#commentForm button {
+  background: #0ef;
+  color: #000;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#commentForm button:hover {
+  background: #00d9d9;
+}
+
+#commentList {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #f3f3f3;
+  border-radius: 10px;
+}
+
+#commentList hr {
+  margin-top: 10px;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.comment {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.5s ease forwards;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.comment:hover {
+  transform: translateY(-5px);
+}
+
+.comment button:hover {
+  background-color: #c0392b;
+}
+
+.reactions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-right: 50px;
+  margin-top: 50px;
+  font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji",
+    "Poppins", sans-serif;
+}
+
+.delete-wrapper {
+  margin-top: 15px;
+}
+
+.delete-button {
+  background-color: #ffecec;
+  border: 1px solid #ffb3b3;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #ffcccc;
+}
+
+.reactions button:hover {
+  transform: scale(1.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Footer Section ===== */
+
+.footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  margin-top: auto;
+}
